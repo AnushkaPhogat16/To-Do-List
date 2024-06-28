@@ -1,90 +1,94 @@
 :root {
-
-  --gradient: linear-gradient(
-    180deg,
-    #f6d5f7 0%, /* Lilac color */
-    #fbe9d7 100% /* White color */
-  );
-
-  --button-colour: #b579d5;
-  --focus-input-border: #b579d5;
-  --todo-heading: #6903a0;
-  --box-shadow-color: rgba(0, 23, 71, 0.15);
-  --author-name: #b579d5;
-  --checkbox-circle: #00d8a7;
-  --checkbox-tick: #ffffff;
-
-
-  --dark: #001747;
-  --grey: #b1bacb;
-  --grey-border: rgba(210, 210, 210, 0.75);
-  --grey-light: #eeeeee;
-  --grey-dark: $405175;
-  --blue: #2d70fd;
-  --green: #00d8a7;
-  --white: #ffffff;
+  --background-color: #fffaf1;
+  --main-text-color: #000000;
+  --side-menu-color: rgba(255, 239, 207, 0.5);
+  --primary-text-color: #333;
+  --secondary-text-color: #aaa;
+  --icon-background-color: #ffba31;
+  --hover-background-color: #f9d388;
+  --link-background-color: black;
+  --link-text-color: #ffba31;
+  --lighter-text-color: #f9d388; /* Lighter color for h1 */
+  --darker-text-color: #222; /* Darker color for h2 */
+  --section-title-background-color: #ffefce;
+  --border-color: #ddd;
+  --box-shadow-color: rgba(0, 0, 0, 0.2);
+  --filter-background-color: #735721;
+  --card-background-color: #ffffff33;
 }
 
-/* Add to :root */
-:root {
-  --gradientDARK: linear-gradient(
-    180deg,
-    #1b1a1a 0%, /* Very dark grey */
-    #a5a4a4 100% /* Slightly lighter dark grey */ /* Slightly lighter dark grey */
-  );
-  --dark-text: #f1f1f1; /* Light text */
-  --dark-border: #444444; /* Dark border */
+.dark-mode {
+  --background-color: #222;
+  --main-text-color: #fff;
+  --side-menu-color: rgba(51, 51, 51, 0.5);
+  --primary-text-color: #ddd;
+  --secondary-text-color: #aaa;
+  --icon-background-color: #785a1e;
+  --hover-background-color: #575757;
+  --link-background-color: #fff;
+  --link-text-color: #000;
+  --lighter-text-color: #666; /* Lighter color for h1 */
+  --darker-text-color: #eee; /* Darker color for h2 */
+  --section-title-background-color: #333;
+  --border-color: #555;
+  --box-shadow-color: rgba(255, 255, 255, 0.2);
+  --filter-background-color: #ccc;
+  --card-background-color: #00000033;
 }
 
-/* Add or update dark-theme-palette class */
-.dark-theme-palette {
-  background: var(--gradientDARK);
-  color: var(--dark-text);
-}
-
-.dark-theme-palette .todo {
-  background-color: var(--gradientDARK);
-  box-shadow: 0 1rem 3rem 1rem var(--dark-border);
-}
-
-.dark-theme-palette .input-field,
-.dark-theme-palette .btn,
-.dark-theme-palette .footer,
-.dark-theme-palette .counter {
-  background-color: var(--gradientDARK);
-  color: var(--dark-text);
-  border-color: var(--dark-border);
-}
-
-.dark-theme-palette .scroll::-webkit-scrollbar-thumb {
-  background-color: var(--grey);
-}
-
-.darkicon {
-  position: absolute;
-  top: 25px;
-  right: 32.5px;
+#theme-toggle {
+  z-index: 1;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  background-color: var(--link-background-color);
+  color: var(--link-text-color);
+  border: none;
+  padding: 10px;
+  font-size: 16px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  border-radius: 50%; /* Make it circular */
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.darkicon img {
-  width: 60px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
+#theme-toggle:hover {
+  background-color: var(--hover-background-color);
 }
 
-a{
+#theme-toggle span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#icon-toggle svg.lucide-moon {
+  display: none;
+}
+
+.dark-mode #icon-toggle svg.lucide-moon {
+  display: inline-block;
+}
+
+.dark-mode #icon-toggle svg.lucide-sun {
+  display: none;
+}
+
+a {
   text-decoration: none;
 }
 
-#deleteButton{
+#deleteButton {
   cursor: pointer;
 }
 
-
-
-
 body {
-  background: var(--gradient);
+  background: var(--background-color);
   margin: 0;
   height: 100vh;
   display: flex;
@@ -92,8 +96,6 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
-
-
 
 .input-field {
   width: 100%;
@@ -104,20 +106,18 @@ body {
 }
 
 .input-field:focus {
-  outline: 0.15rem solid var(--focus-input-border); /* Purple color outline on focus */
+  outline: 0.15rem solid var(--focus-input-border-color); /* Purple color outline on focus */
 }
 
-
 .btn {
-  color: var(--white);
+  color: var(--main-text-color);
   font-size: 1.1rem;
   padding: 0.7rem 1.5rem;
   border-radius: 0.3rem;
-  background-color: var(--button-colour);
+  background-color: var(--button-background-color);
   border: none;
   position: absolute;
   right: 0.5rem;
-  bottom: 0.5rem;
   bottom: 0.5rem;
   cursor: pointer;
 }
@@ -137,18 +137,17 @@ p {
 .todo h2 {
   text-transform: uppercase;
   height: 3rem;
-  color: var(--todo-heading); /* Purple color */
+  color: var(--todo-heading-color); /* Purple color */
   text-align: center;
   font-weight: bold; /* Make the text bold */
 }
-
 
 .todo {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   border-radius: 2rem;
-  background: var(--white);
+  background: var(--main-text-color);
   padding: 3rem;
   height: 50%;
   width: 60%;
@@ -159,7 +158,7 @@ p {
 h2 {
   text-transform: uppercase;
   height: 3rem;
-  color: var(--dark);
+  color: var(--darker-text-color);
   text-align: center;
 }
 
@@ -177,7 +176,7 @@ h2 {
 }
 
 input[type="text"]::placeholder {
-  color: var(--grey);
+  color: var(--secondary-text-color);
 }
 
 .todo-container {
@@ -201,7 +200,7 @@ li {
 #todoList p {
   display: flex;
   gap: 1rem;
-  color: var(--dark);
+  color: var(--darker-text-color);
   align-items: center;
 }
 
@@ -228,27 +227,27 @@ input[type="checkbox"]::before {
   height: 2rem;
   font-size: 1.7rem;
   text-align: center;
-  border: 0.06rem solid var(--grey-border);
+  border: 0.06rem solid var(--border-color);
   border-radius: 50%;
   color: transparent;
 }
 
 input[type="checkbox"]:checked::before {
-  color: var(--checkbox-tick);
-  background-color: var(--checkbox-circle);
-  border: 0.06rem solid var(--checkbox-circle);
+  color: var(--checkbox-tick-color);
+  background-color: var(--checkbox-circle-color);
+  border: 0.06rem solid var(--checkbox-circle-color);
   border-radius: 50%;
 }
 
 .counter {
-  border: 0.06rem solid var(--grey-light);
+  border: 0.06rem solid var(--border-color);
 }
 
 .counter-container {
   height: 2rem;
   display: flex;
   justify-content: space-between;
-  color: var(--grey);
+  color: var(--secondary-text-color);
 }
 
 .counter-container p {
@@ -258,17 +257,9 @@ input[type="checkbox"]:checked::before {
 .counter-container button {
   border: none;
   background-color: transparent;
-  color: var(--grey);
+  color: var(--secondary-text-color);
   font-size: 1rem;
 }
-
-/* .footer {
-  display: flex;
-  gap: 1.8rem;
-  background-color: var(--white);
-  padding: 1.2rem;
-  border-radius: 0.5rem;
-} */
 
 .footer {
   position: absolute;
@@ -283,7 +274,7 @@ input[type="checkbox"]:checked::before {
 .made-by,
 .author {
   font-size: 1.2rem; /* Increased font size */
-  color: var(--author-name); /* Changed text color to lilac */
+  color: var(--author-name-color); /* Changed text color to lilac */
   display: flex;
   align-items: flex-end; /* Align items from the bottom */
 }
@@ -298,7 +289,6 @@ input[type="checkbox"]:checked::before {
   font-size: 1.2rem; /* Increased font size */
 }
 
-
 .scroll {
   height: 15rem;
   scrollbar-width: thin;
@@ -309,7 +299,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .scroll::-webkit-scrollbar-thumb {
-  background-color: var(--blue);
+  background-color: var(--primary-text-color);
   border-radius: 0.5rem;
 }
 

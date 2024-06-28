@@ -1,9 +1,26 @@
-const toggleIcon = document.getElementById("toggleicon");
-const body = document.body;
+function toggleTheme() {
+  const body = document.body;
+  body.classList.toggle("dark-mode");
+  const themeStyle = document.getElementById("theme-style");
+  const isDarkMode = body.classList.contains("dark-mode");
 
-toggleIcon.addEventListener("click", function() {
-  body.classList.toggle("dark-theme-palette");
-});
+  const iconToggle = document.getElementById("icon-toggle");
+  const sunIcon = iconToggle.querySelector(".lucide-sun");
+  const moonIcon = iconToggle.querySelector(".lucide-moon");
+  sunIcon.style.display = isDarkMode ? "none" : "inline-block";
+  moonIcon.style.display = isDarkMode ? "inline-block" : "none";
+
+  localStorage.setItem("dark-mode", isDarkMode);
+
+  themeStyle.href = `../css/home-page${isDarkMode ? "-dark" : ""}.css`;
+}
+
+const prefersDarkMode = localStorage.getItem("dark-mode") === "true";
+
+if (prefersDarkMode) {
+  document.body.classList.add("dark-mode");
+  toggleTheme();
+}
 
 
 // Retrieve todo from local storage or initialize an empty array
