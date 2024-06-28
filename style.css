@@ -29,8 +29,8 @@
 :root {
   --gradientDARK: linear-gradient(
     180deg,
-    #1b1a1a 0%, /* Very dark grey */
-    #a5a4a4 100% /* Slightly lighter dark grey */ /* Slightly lighter dark grey */
+    #000000 0%, /* Very dark grey */
+    #2d2828 100% /* Slightly lighter dark grey */ /* Slightly lighter dark grey */
   );
   --dark-text: #f1f1f1; /* Light text */
   --dark-border: #444444; /* Dark border */
