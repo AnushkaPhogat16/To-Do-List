@@ -27,19 +27,23 @@
 
 /* Add to :root */
 :root {
-  --dark-bg: #1a1a1a; /* Dark background */
+  --gradientDARK: linear-gradient(
+    180deg,
+    #9e6262 0%, /* Very dark grey */
+    #1c1c1c 100% /* Slightly lighter dark grey */
+  );
   --dark-text: #f1f1f1; /* Light text */
   --dark-border: #444444; /* Dark border */
 }
 
 /* Add or update dark-theme-palette class */
 .dark-theme-palette {
-  background-color: var(--dark-bg);
+  background: var(--gradientDARK);
   color: var(--dark-text);
 }
 
 .dark-theme-palette .todo {
-  background-color: var(--dark-bg);
+  background-color: var(--gradientDARK);
   box-shadow: 0 1rem 3rem 1rem var(--dark-border);
 }
 
@@ -47,7 +51,7 @@
 .dark-theme-palette .btn,
 .dark-theme-palette .footer,
 .dark-theme-palette .counter {
-  background-color: var(--dark-bg);
+  background-color: var(--gradientDARK);
   color: var(--dark-text);
   border-color: var(--dark-border);
 }
@@ -55,9 +59,6 @@
 .dark-theme-palette .scroll::-webkit-scrollbar-thumb {
   background-color: var(--grey);
 }
-
-
-
 
 .darkicon {
   position: absolute;
@@ -121,6 +122,7 @@ body {
   right: 0.5rem;
   bottom: 0.5rem;
   bottom: 0.5rem;
+  cursor: pointer;
 }
 
 h1,

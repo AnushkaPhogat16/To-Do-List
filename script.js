@@ -1,4 +1,9 @@
+const toggleIcon = document.getElementById("toggleicon");
+const body = document.body;
 
+toggleIcon.addEventListener("click", function() {
+  body.classList.toggle("dark-theme-palette");
+});
 
 
 // Retrieve todo from local storage or initialize an empty array
@@ -90,8 +95,3 @@ function saveToLocalStorage() {
 }
 
 
-var icon = document.getElementById("toggle-icon");
-
-icon.onclick = function() {
-  document.body.classList.toggle("dark-theme-palette");
-}
