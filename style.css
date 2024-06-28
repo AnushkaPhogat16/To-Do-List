@@ -29,8 +29,8 @@
 :root {
   --gradientDARK: linear-gradient(
     180deg,
-    #9e6262 0%, /* Very dark grey */
-    #1c1c1c 100% /* Slightly lighter dark grey */
+    #1b1a1a 0%, /* Very dark grey */
+    #a5a4a4 100% /* Slightly lighter dark grey */ /* Slightly lighter dark grey */
   );
   --dark-text: #f1f1f1; /* Light text */
   --dark-border: #444444; /* Dark border */
@@ -80,10 +80,7 @@ a{
   cursor: pointer;
 }
 
-.dark-theme-palette{
-  background: black;
-  color: wheat;
-}
+
 
 
 body {
