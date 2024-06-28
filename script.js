@@ -1,8 +1,10 @@
 const toggleIcon = document.getElementById("toggleicon");
 const body = document.body;
+const footer = document.querySelector("footer"); // Correct selector for footer
 
 toggleIcon.addEventListener("click", function() {
   body.classList.toggle("dark-theme-palette");
+  footer.classList.toggle("dark-theme-palette"); // Ensure the class is toggled for the footer
 });
 
 
