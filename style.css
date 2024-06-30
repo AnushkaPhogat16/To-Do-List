@@ -32,6 +32,7 @@
   );
   --dark-text: #f1f1f1; /* Light text */
   --dark-border: #444444; /* Dark border */
+  --task-text-dark: #f1f1f1; /* Light text for tasks in dark mode */
 }
 
 .dark-theme-palette .footer {
@@ -224,6 +225,10 @@ li {
   gap: 1rem;
   color: var(--task-text); /* Ensure task text uses the correct color variable */
   align-items: center;
+}
+
+.dark-theme-palette #todoList p {
+  color: var(--task-text-dark); /* Ensure task text uses the correct color variable in dark mode */
 }
 
 #todoList .disabled {
