@@ -1,5 +1,4 @@
 :root {
-
   --gradient: linear-gradient(
     180deg,
     #f6d5f7 0%, /* Lilac color */
@@ -14,23 +13,22 @@
   --checkbox-circle: #00d8a7;
   --checkbox-tick: #ffffff;
 
-
   --dark: #001747;
   --grey: #b1bacb;
   --grey-border: rgba(210, 210, 210, 0.75);
   --grey-light: #eeeeee;
-  --grey-dark: $405175;
+  --grey-dark: #405175;
   --blue: #2d70fd;
   --green: #00d8a7;
   --white: #ffffff;
+  --task-text: #001747; /* Added color for task text */
 }
 
-/* Add to :root */
 :root {
   --gradientDARK: linear-gradient(
     180deg,
     #000000 0%, /* Very dark grey */
-    #2d2828 100% /* Slightly lighter dark grey */ /* Slightly lighter dark grey */
+    #2d2828 100% /* Slightly lighter dark grey */
   );
   --dark-text: #f1f1f1; /* Light text */
   --dark-border: #444444; /* Dark border */
@@ -40,20 +38,18 @@
   color: var(--dark-text); /* Ensures the footer text color changes to white */
 }
 
-/* Add or update dark-theme-palette class */
 .dark-theme-palette {
   background: var(--gradientDARK);
   color: var(--dark-text);
 }
 
-footer .dark-theme-palette{
+footer .dark-theme-palette {
   color: var(--dark-text);
 }
 
-.dark-theme-palette .made-by .author{
+.dark-theme-palette .made-by .author {
   color: var(--dark-text);
 }
-
 
 .dark-theme-palette .input[type="checkbox"]:checked::before {
   color: black;
@@ -66,7 +62,7 @@ footer .dark-theme-palette{
   outline: 0.15rem solid var(--dark-text); /* Purple color outline on focus */
 }
 
-.dark-theme-palette .todo h2{
+.dark-theme-palette .todo h2 {
   color: var(--dark-text);
 }
 
@@ -75,7 +71,7 @@ footer .dark-theme-palette{
   box-shadow: 0 1rem 3rem 1rem var(--dark-border);
 }
 
-.dark-theme-palette .btn{
+.dark-theme-palette .btn {
   background-color: gray;
   color: white;
   border-color: grey;
@@ -105,16 +101,13 @@ footer .dark-theme-palette{
   height: auto; /* Maintain aspect ratio */
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-#deleteButton{
+#deleteButton {
   cursor: pointer;
 }
-
-
-
 
 body {
   background: var(--gradient);
@@ -125,8 +118,6 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
-
-
 
 .input-field {
   width: 100%;
@@ -140,7 +131,6 @@ body {
   outline: 0.15rem solid var(--focus-input-border); /* Purple color outline on focus */
 }
 
-
 .btn {
   color: var(--white);
   font-size: 1.1rem;
@@ -150,7 +140,6 @@ body {
   border: none;
   position: absolute;
   right: 0.5rem;
-  bottom: 0.5rem;
   bottom: 0.5rem;
   cursor: pointer;
 }
@@ -174,7 +163,6 @@ p {
   text-align: center;
   font-weight: bold; /* Make the text bold */
 }
-
 
 .todo {
   display: flex;
@@ -234,7 +222,7 @@ li {
 #todoList p {
   display: flex;
   gap: 1rem;
-  color: var(--dark-text);
+  color: var(--task-text); /* Ensure task text uses the correct color variable */
   align-items: center;
 }
 
@@ -295,14 +283,6 @@ input[type="checkbox"]:checked::before {
   font-size: 1rem;
 }
 
-/* .footer {
-  display: flex;
-  gap: 1.8rem;
-  background-color: var(--white);
-  padding: 1.2rem;
-  border-radius: 0.5rem;
-} */
-
 .footer {
   position: absolute;
   bottom: 20px; /* Adjusted to be 20px above the bottom */
@@ -330,7 +310,6 @@ input[type="checkbox"]:checked::before {
   margin-left: 1px; /* Adds a gap of 5px between "Anushka Phogat" and "Made with heart" */
   font-size: 1.2rem; /* Increased font size */
 }
-
 
 .scroll {
   height: 15rem;
