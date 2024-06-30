@@ -3,8 +3,13 @@ const body = document.body;
 
 toggleIcon.addEventListener("click", function() {
   body.classList.toggle("dark-theme-palette");
+  
+  if (body.classList.contains("dark-theme-palette")) {
+    toggleIcon.src = "dark theme icon/moon.png";
+  } else {
+    toggleIcon.src = "dark theme icon/sun.png";
+  }
 });
-
 
 // Retrieve todo from local storage or initialize an empty array
 let todo = JSON.parse(localStorage.getItem("todo")) || [];
@@ -93,5 +98,3 @@ function deleteAllTasks() {
 function saveToLocalStorage() {
   localStorage.setItem("todo", JSON.stringify(todo));
 }
-
-
