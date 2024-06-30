@@ -39,6 +39,11 @@
   color: var(--dark-text); /* Ensures the footer text color changes to white */
 }
 
+.dark-theme-palette .footer .made-by,
+.dark-theme-palette .footer .author {
+  color: var(--dark-text);
+}
+
 .dark-theme-palette {
   background: var(--gradientDARK);
   color: var(--dark-text);
@@ -325,11 +330,11 @@ input[type="checkbox"]:checked::before {
   width: 0.6rem;
 }
 
-.scroll::-webkit-scrollbar-thumb {
-  background-color: var(--blue);
-  border-radius: 0.5rem;
+.scroll::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
-.scroll::-webkit-scrollbar-track {
-  display: none;
+.scroll::-webkit-scrollbar-thumb {
+  background-color: var(--dark);
+  border-radius: 1.3rem;
 }
